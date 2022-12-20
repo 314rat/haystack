@@ -20,6 +20,8 @@ services:
     # This image is "ready-to-query" with some indexed articles
     # about countries and capital cities from Wikipedia:
     image: "deepset/elasticsearch-countries-and-capitals"
+    sysctls:
+      net.core.somaxconn: 65535
     ports:
       - 9200:9200
     restart: on-failure
