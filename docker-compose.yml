@@ -26,6 +26,7 @@ services:
     environment:
       - discovery.type=single-node
       - "ES_JAVA_OPTS=-Xms1024m -Xmx1024m"
+      - http.compression=true
     healthcheck:
         test: curl --fail http://localhost:9200/_cat/health || exit 1
         interval: 10s
