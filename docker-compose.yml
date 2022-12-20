@@ -22,6 +22,7 @@ services:
     image: "deepset/elasticsearch-countries-and-capitals"
     sysctls:
       net.core.somaxconn: 65535
+      net.ipv4.tcp_tw_reuse: 1
     ports:
       - 9200:9200
     restart: on-failure
